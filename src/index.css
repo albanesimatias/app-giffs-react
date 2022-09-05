@@ -1,5 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+
+:root {
+  --results-columns: 2;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 20px;
+}
+
+.ListOfGifs {
+  column-count: var(--results-columns);
+  max-width: 1000px;
+  column-gap: .5em;
+}
+
+.ListOfGifs-item {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+}
+
 body {
-  margin: 0;
+  background-color: #282c34;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +37,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input {
+  display: flex;
+  height: 35px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 12px #000;
+  text-align: center;
+  margin: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.Banner {
+  max-width: 1000px;
+  max-height: 250px;
+  object-fit: fixed;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --results-columns: 3;
+  }
+}
+
+@media (min-width: 800px) {
+  :root {
+    --results-columns: 3;
+  }
 }

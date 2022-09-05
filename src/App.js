@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Banner from './components/Banner';
+import ListOfGifs from './components/ListOfGifs';
 
-function App() {
+export default function App() {
+  const [keyword, setKeyword] = useState('todo');
+  let aux = '';
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='Container'>
+      <Banner url={'https://www.paragyte.com/img/React_Banner.png'} />
+      <form onSubmit={(evt) => { evt.preventDefault(); setKeyword(aux) } }>
+        <input type={'text'} placeholder='Buscar...' onChange={ (event) => { aux=event.target.value } }></input>
+      </form>
+      <ListOfGifs keyword={keyword}/>
     </div>
   );
 }
 
-export default App;
