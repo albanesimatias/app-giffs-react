@@ -1,6 +1,5 @@
 import UseGifs from '../hooks/useGifts';
 import Gif from "./Gif"
-//import { Link, Route } from 'wouter';
 
 export default function ListOfGifs({keyword}) {
   const gifs = UseGifs({keyword});

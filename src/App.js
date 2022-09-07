@@ -1,19 +1,17 @@
-import { useState } from 'react';
+import React from 'react';
+import { Route } from 'wouter';
 import './App.css';
-import Banner from './components/Banner';
-import ListOfGifs from './components/ListOfGifs';
+import Home from './pages/Home/Home';
+import SearchResults from './pages/SearchResults/SearchResults';
 
 export default function App() {
-  const [keyword, setKeyword] = useState('todo');
-  let aux = '';
   return (
-    <div className='Container'>
-      <Banner url={'https://www.paragyte.com/img/React_Banner.png'} />
-      <form onSubmit={(evt) => { evt.preventDefault(); setKeyword(aux) } }>
-        <input type={'text'} placeholder='Buscar...' onChange={ (event) => { aux=event.target.value } }></input>
-      </form>
-      <ListOfGifs keyword={keyword}/>
+    <div className="App">
+        <section className='App-content'>
+          <Route component={Home} path="/" />
+          <Route component={SearchResults} path="/search/:keyword" />
+        </section>
     </div>
-  );
+  )
 }
 

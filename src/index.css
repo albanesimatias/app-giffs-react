@@ -1,5 +1,16 @@
 *{
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
   box-sizing: border-box;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+li a:hover {
+  border-bottom: 1px solid #fff;
 }
 
 :root {
@@ -11,6 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  min-height: 80vh;
   padding: 20px;
 }
 
@@ -45,9 +57,9 @@ input {
   border-radius: 5px;
   box-shadow: 0 0 12px #000;
   text-align: center;
-  margin: 5px;
   border: none;
   font-size: 20px;
+  color: #000;
 }
 
 img{
@@ -55,10 +67,21 @@ img{
   height: 100%;
 }
 
-.Banner {
-  max-width: 1000px;
-  max-height: 250px;
-  object-fit: fixed;
+form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px
+}
+
+.Logo-app {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.Logo-app:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
