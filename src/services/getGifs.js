@@ -1,7 +1,7 @@
-const apiKEY = 'Kv5vrDrAbZxQ5a1aE39500N8C1Tj8CAm'
+import { apiKEY, baseURL } from "./settings"
 
 export default function getGifs ({keyword = 'morty'}){
-    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKEY}&q=${keyword}&limit=25&offset=0&rating=g&lang=en`
+    const apiURL = `${baseURL}/gifs/search?api_key=${apiKEY}&q=${keyword}&limit=25&offset=0&rating=g&lang=en`
     return fetch(apiURL)
             .then(res => res.json())
             .then(response => {

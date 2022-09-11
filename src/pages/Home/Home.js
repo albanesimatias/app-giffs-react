@@ -1,9 +1,7 @@
-import React from "react"
-import { Link } from "wouter"
 import Buscador from "../../components/Buscador"
 import Logo from "../../components/Logo"
+import TrendringSearchs from "../../components/TrendingSearchs"
 
-const POPULAR_GIFS = ["Matrix","Argentina","Yoda"]
 export default function Home () {
     return (
         <div className="Container">
@@ -11,15 +9,7 @@ export default function Home () {
             <Buscador />
             <div>
                 <h3 className="App-tittle">Los gifs mas populares</h3>
-                <ul>
-                    {POPULAR_GIFS.map((popularGif) => (
-                        <li key={popularGif}>
-                            <Link to={`search/${popularGif}`}>
-                                Gifs de {popularGif}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                <TrendringSearchs />
             </div>
         </div>
     )
