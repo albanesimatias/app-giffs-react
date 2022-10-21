@@ -5,7 +5,6 @@ import getTrendings from "../services/getTrendings";
 
 export default function TrendringSearchs () {
     const [popular_gifs, setPopular_gifs] = useState([])
-
     useEffect( function (){
         getTrendings().then(setPopular_gifs)
     },[])
